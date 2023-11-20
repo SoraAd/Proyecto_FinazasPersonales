@@ -4,6 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Pagina principal</title>
+    <!--  Script js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+            integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/1.0.12/jsrender.min.js"
+            integrity="sha512-0IE+tamZ/+AIGOdEJQWN32ogflnKTCC1eRi3NC3lqf7FhfmwzONIg2r3lsQJUTgAYmgtYOsihuw6jjt7adAJ7Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js" integrity="sha512-Gn0tSSjkIGAkaZQWjx3Ctl/0dVJuTmjW/f9QyB302kFjU4uTNP4HtA32U2qXs/TRlEsK5CoEqMEMs7LnzLOBsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/navigo/8.11.1/navigo.min.js" referrerpolicy="no-referrer"></script>
+
+
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
@@ -40,7 +52,8 @@
     <br>
     <br>
 
-    <table class="table">
+    <!-- Copia antigua
+     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Date</th>
@@ -73,8 +86,108 @@
             </tr>
         </tbody>
     </table>
+
+    -->
+    <!-- Inicio de script template -->
+
+    <script id="movimientos_template" type="text/x-handlebars-template">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Category</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{for Movimientos}}
+            <tr class="table-success">
+                <td>{{:fecha}}</td>
+                <td>income example</td>
+                <td>{{:cantidad}}</td>
+                <td>{{:categoria}}</td>
+                <td>
+                    <button class="btn btn-outline-danger">remove</button>
+                    <button class="btn btn-outline-primary">modify</button>
+                </td>
+            </tr>
+            {{/for}}
+            </tbody>
+        </table>
+    </script>
+
     <script crossorigin="anonymous" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!--  ------------------------------     -->
+
+
+    <div id="app"></div>
+    <script>
+
+        const router = new Navigo('/',{hash:true})
+        router
+            .on('/',showMovimientos)
+            .on('/index.html',showMovimientos)
+            .on('/add',addPais)
+            .on('/delet',deletePais)
+            .resolve();
+        function deletePais(params) {
+
+            let id = params.params.id;
+            alert('Borrando el Pais');
+
+            $.ajax({
+                url: 'api/paises/' + id,
+                type: 'DELETE'
+            })
+                .then(function (result) {
+                    router.navigate('/')
+                })
+                .catch(function (error) {
+                    console.log(error)
+                })
+        }
+        function  addPaisAfegix(event){
+            event.preventDefault();
+            let form = $('#add_paises_form');
+            console.log(form)
+            let parametros = form.serializeObject();
+            console.log(form)
+            caches.has(form)
+            $.post('/api/paises',parametros,function (result){
+                console.log(result)
+                router.navigate('/')
+            }).catch(function (error){
+                console.log(error)
+            })
+        }
+        function  addPais(){
+            $.getJSON('/api/paises',function (data){
+                let html = $("#add_paises_template").render(data);
+                $("#app").html(html)
+                $("#add_paises_form_submit").on("click",addPaisAfegix)
+
+            });
+        }
+
+        function showMovimientos() {
+
+            $.getJSON('/api/movimientos', function (data) {
+                console.log(data)
+                let html = $('#movimientos_template').render(data);
+                $('#app').html(html);
+            });
+        }
+
+        $(document).ready(function () {
+            router.navigate('/')
+        });
+    </script>
 </body>
 
 </html>
