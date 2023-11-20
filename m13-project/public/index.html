@@ -102,26 +102,18 @@
             </tr>
             </thead>
             <tbody>
+            {{for Movimientos}}
             <tr class="table-success">
-                <td>{{:date}}</td>
+                <td>{{:fecha}}</td>
                 <td>income example</td>
-                <td>{{:amount}}</td>
-                <td>{{:category}}</td>
+                <td>{{:cantidad}}</td>
+                <td>{{:categoria}}</td>
                 <td>
                     <button class="btn btn-outline-danger">remove</button>
                     <button class="btn btn-outline-primary">modify</button>
                 </td>
             </tr>
-            <tr class="table-danger">
-                <td>{{:date}}</td>
-                <td>expense example</td>
-                <td>{{:amount}}</td>
-                <td>{{:category}}</td>
-                <td>
-                    <button class="btn btn-outline-danger">remove</button>
-                    <button class="btn btn-outline-primary">modify</button>
-                </td>
-            </tr>
+            {{/for}}
             </tbody>
         </table>
     </script>
@@ -143,7 +135,6 @@
             .on('/index.html',showMovimientos)
             .on('/add',addPais)
             .on('/delet',deletePais)
-            .on('/modif',modPais)
             .resolve();
         function deletePais(params) {
 
@@ -183,42 +174,12 @@
 
             });
         }
-        function modPaisBoton(event){
-            console.log("Final")
-            event.preventDefault();
-            let form = $('#mod_paises_form')
-            let parameters = form.serializeObject();
-            console.log(parameters)
-            let id = $(this).data("id");
-            $.post('/api/paises/' + id,parameters,function (data) {
-                router.navigate('/')
-            })
-                .catch(function (error){
-                    console.log(error)
-                })
 
-            console.log(parameters)
-
-        }
-        function modPais(params){
-            let id = params.params.id;
-            alert('modificando pais')
-            $.getJSON('/api/paises/' + id, function (paises) {
-                pais = paises[0]
-                let data = {
-                    'pais': pais
-                }
-                console.log(data)
-                let html = $("#mod_paises_template").render(data);
-                $("#app").html(html);
-                $('#mod_paises_form_submit').on('click',modPaisBoton)
-            });
-        }
         function showMovimientos() {
 
-            $.getJSON('/api/paises', function (data) {
+            $.getJSON('/api/movimientos', function (data) {
                 console.log(data)
-                let html = $('#paises_template').render(data);
+                let html = $('#movimientos_template').render(data);
                 $('#app').html(html);
             });
         }
