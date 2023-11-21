@@ -102,18 +102,17 @@
             </tr>
             </thead>
             <tbody>
-            {{for Movimientos}}
+        {{for movimientos}}
             <tr class="table-success">
                 <td>{{:fecha}}</td>
-                <td>income example</td>
+                <td>{{:descripcion}}</td>
                 <td>{{:cantidad}}</td>
                 <td>{{:categoria}}</td>
                 <td>
-                    <button class="btn btn-outline-danger">remove</button>
-                    <button class="btn btn-outline-primary">modify</button>
+                    <button href="#/deleteMovimiento?id={{:id}}" class="btn btn-outline-danger">remove</button>
                 </td>
             </tr>
-            {{/for}}
+        {{/for}}
             </tbody>
         </table>
     </script>
@@ -133,10 +132,11 @@
         router
             .on('/',showMovimientos)
             .on('/index.html',showMovimientos)
-            .on('/add',addPais)
-            .on('/delet',deletePais)
+            //.on('/add',addPais)
+            .on('/delet',deleteMovimiento)
             .resolve();
-        function deletePais(params) {
+
+        function deleteMovimiento(params) {
 
             let id = params.params.id;
             alert('Borrando el Pais');
@@ -152,6 +152,7 @@
                     console.log(error)
                 })
         }
+        /*
         function  addPaisAfegix(event){
             event.preventDefault();
             let form = $('#add_paises_form');
@@ -173,14 +174,14 @@
                 $("#add_paises_form_submit").on("click",addPaisAfegix)
 
             });
-        }
+        }*/
 
         function showMovimientos() {
-
-            $.getJSON('/api/movimientos', function (data) {
+            $.getJSON('/api/movimientos/', function (data) {
                 console.log(data)
                 let html = $('#movimientos_template').render(data);
                 $('#app').html(html);
+                console.log(html)
             });
         }
 
@@ -189,5 +190,6 @@
         });
     </script>
 </body>
+
 
 </html>
