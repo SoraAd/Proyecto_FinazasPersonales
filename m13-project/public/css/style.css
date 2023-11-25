@@ -184,3 +184,11 @@ body {
     height: 50px;
     padding: 5px;
 }
+
+.table> :not(caption)>*>* {
+    background-color: transparent;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: #212529;
+}
