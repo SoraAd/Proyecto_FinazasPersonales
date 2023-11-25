@@ -1,3 +1,4 @@
+/*
 .dates{
     margin-bottom: 15px;
     margin-left: 3rem;
@@ -15,5 +16,171 @@ h1{
 
 .dates form input,
 .options form select {
-    margin-right: 50px; 
+    margin-right: 50px;
+} */
+
+
+.dates {
+    margin-bottom: 15px;
+    margin-left: 3rem;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    font-size: 76px;
+    color: #212529;
+}
+
+body {
+    background-color: #DADBDA;
+}
+
+.options {
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
+
+/*
+.dates form input,
+.options form select {
+}*/
+
+.flex-column {
+    position: fixed;
+    background-color: #212529;
+    width: 20%;
+    height: 100%;
+    margin-left: auto;
+}
+
+.logo {
+    width: 65%;
+    margin: 75px;
+    margin-inline: 35px;
+    align-self: center;
+}
+
+.input-label {
+    margin: 10px;
+}
+
+.form {
+    padding: 2%;
+}
+
+.input-field {
+    height: 50px;
+    margin-right: 100px;
+    background-color: #DADBDA;
+    color: black;
+    border-width: 2px;
+    border-radius: 7px;
+    border-style: groove;
+    border-color: black;
+    min-width: 55px;
+    height: auto;
+    margin-left: 15px;
+}
+
+.add-button {
+    width: 100px;
+}
+
+.nav-link {
+    font-size: larger;
+    margin-left: 17%;
+    margin-top: 20px;
+    align-self: flex-start;
+    color: white;
+}
+
+.row1 {
+    width: 100%;
+}
+
+
+.nav-link.active {
+    color: white;
+    background-color: #212529;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: white;
+}
+
+.nav-link.disabled, .nav-link:disabled {
+    color: white;
+    opacity: 50%;
+}
+
+.nav-pills .nav-link.active {
+    color: white;
+    background-color: #212529;
+    font-weight: bold;
+}
+
+.nav-link:focus, .nav-link:hover {
+    font-weight: bold;
+}
+
+
+.tab-content {
+    width: 100%;
+}
+
+.card {
+    min-width: 250px;
+    padding: 20px;
+    margin: auto;
+}
+
+.container {
+    margin: auto;
+}
+
+.row2 {
+    margin: 35px;
+}
+
+.row1 {
+    width: 100%;
+}
+
+.containers {
+    margin-top: 40px;
+}
+
+.add-button {
+    text-align: right;
+    margin-right: 8rem;
+}
+
+.history-title {
+    display: inline;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #212529;
+    --bs-btn-border-color: #212529;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #212529;
+    --bs-btn-hover-border-color: #212529;
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #212529;
+    --bs-btn-active-border-color: #212529;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #212529;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #212529;
+    --bs-gradient: none;
+}
+
+.add-btn {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
 }
