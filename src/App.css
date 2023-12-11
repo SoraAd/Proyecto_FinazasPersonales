@@ -18,6 +18,11 @@
 
 }
 
+.space-btw {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .margin_75px{
   margin: 25px;
 }
