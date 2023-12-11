@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -13,19 +12,62 @@
   }
 }
 
+
+.margin-buttons {
+  margin: 10px;
+
+}
+
+.margin_75px{
+  margin: 25px;
+}
+
+.big-margin{
+  margin-bottom: 230px;
+}
+
+.big-btn {
+  padding: 100px;
+  width: 100%;
+
+}
+
+.myCanvas {
+  width: 25%;
+  height: 25%;
+}
+
+.no-color-link {
+  text-decoration: none;
+  color: white;
+  user-select: none;
+}
+
+.cajas {
+  background-color: #D9D9D9;
+  color: #000000;
+
+}
+
+.padding-cajas {
+  padding: 10px;
+}
+
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+
 }
 
 .App-link {
-  color: #61dafb;
+  color: cornflowerblue;
 }
 
 @keyframes App-logo-spin {
