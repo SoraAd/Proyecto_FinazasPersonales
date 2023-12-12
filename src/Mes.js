@@ -1,10 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Link} from "react-router-dom";
-import {Chart, LinearScale, BarElement, BarController, CategoryScale} from 'chart.js';
-import {useEffect, useRef} from "react";
-
-Chart.register(LinearScale, BarElement, BarController, CategoryScale);
 
 function Mes() {
     return (
@@ -17,10 +13,9 @@ function Mes() {
             </header>
             <body>
             <div className="container">
-
                 <div className="row">
                     <div className="col">
-                        <div className="cajas">
+                        <div className="card-container padding1">
                             <div className="card-body">
                                 <span className="material-symbols-outlined"></span>
                             </div>
@@ -39,12 +34,12 @@ function Mes() {
                         </div>
                     </div>
                 </div>
-                <div className="margin_75px"/>
-                <div className="cajas">
+                <div className="margin_25px"/>
+                <div className="card-container ">
                     <div className="text-center">
                         <div className="card-body">
                             <h5 className="card-title">Últimes transaccions</h5>
-                            <table className="table">
+                            <table className="table table-striped">
                                 <tbody>
                                 <tr>
                                     <th scope="row">1</th>
@@ -65,8 +60,9 @@ function Mes() {
                                     <td>90€</td>
                                 </tr>
                                 </tbody>
+
                             </table>
-                            <div className=" btn btn-dark">
+                            <div className="btn btn-dark">
                                 <Link to="/Transaccions" className="no-color-link">Mostra més</Link>
                             </div>
                         </div>

@@ -13,10 +13,9 @@ function Transaccions(){
             </header>
             <body>
                 <div className="container">
-                    <div className="cajas">
                         <div className="card-body">
-                            <table className="table">
-                                <tbody>
+                            <table className="table table-striped">
+                                <tbody className="table-striped">
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Bizum</td>
@@ -91,12 +90,11 @@ function Transaccions(){
                                 </tr>
                                 </tbody>
                             </table>
+                            <div>
+                                <Link to={"/"} className={"btn btn-dark"}>Tornar</Link>
+                            </div>
                         </div>
                     </div>
-                    <div className="btn btn-primary">
-                        <Link to="/" className="no-color-link">Tornar</Link>
-                    </div>
-                </div>
             </body>
         </div>
     );

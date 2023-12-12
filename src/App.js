@@ -2,6 +2,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Link} from 'react-router-dom';
 import {Component} from "react";
+import ProgressBar from "./ProgressBar";
+
 
 class App extends Component
 {
@@ -31,7 +33,6 @@ class App extends Component
                     <div className="container">
                         <h1>Hello User</h1>
                         <p>Avui és un bon dia per estalviar</p>
-                        <p className="h1">{this.state.apiResponse}</p>
                     </div>
                 </header>
                 <body>
@@ -39,8 +40,8 @@ class App extends Component
                     <div className="text-center">
                         <div className="row">
                             <div className="col">
-                                <div className="cajas">
-                                    <div className="card-body">
+                                <div className="card-container">
+                                    <div className="card-body ">
                                         <span className="material-symbols-outlined"></span>
                                         <h5 className="card-title">Mes</h5>
                                     </div>
@@ -50,31 +51,30 @@ class App extends Component
                                         <p>Restant: restant</p>
                                     </div>
                                     <div className="btn btn-dark">
-                                        <Link to="/Mes" className="no-color-link">Mostra més</Link>
+                                        <Link to="/Mes" className="no-color-link">Mostrar més</Link>
                                     </div>
                                 </div>
                             </div>
                             <div className="col">
-                                <div className="cajas">
+                                <div className="card-container">
                                     <div className="card-body padding-cajas">
                                         <span className="material-symbols-outlined"></span>
                                         <h5 className="card-title">Estalvis</h5>
                                     </div>
                                     <div>
-                                        Barra de progreso<br></br>
-                                        2.500€ / 5000€
+                                        <ProgressBar/>
                                     </div>
                                     <div className="btn btn-dark">
-                                        <Link to="/Estalvi" className="no-color-link">Mostra més</Link>
+                                        <Link to="/Estalvi" className="no-color-link">Mostrar més</Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="margin_75px"/>
-                        <div className="cajas">
+                        <div className="margin_25px"/>
+                        <div className="card-container">
                             <div className="card-body">
                                 <h5 className="card-title">Últimes transaccions</h5>
-                                <table className="table">
+                                <table className="table table-striped">
                                     <tbody>
                                     <tr>
                                         <th scope="row">1</th>
@@ -97,7 +97,7 @@ class App extends Component
                                     </tbody>
                                 </table>
                                 <div className="btn btn-dark">
-                                    <Link to="/Transaccions" className="no-color-link">Mostra més</Link>
+                                    <Link to="/Transaccions" className="no-color-link">Mostrar més</Link>
                                 </div>
                             </div>
                         </div>

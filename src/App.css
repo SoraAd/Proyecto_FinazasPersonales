@@ -13,17 +13,32 @@
 }
 
 
+.padding1 {
+  padding: 20px;
+}
+
 .margin-buttons {
   margin: 10px;
 
 }
 
-.space-btw {
+.progress-bar-container {
   display: flex;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
 }
 
-.margin_75px{
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.margin_25px{
   margin: 25px;
 }
 
@@ -48,15 +63,15 @@
   user-select: none;
 }
 
-.cajas {
+.card-container {
   background-color: #D9D9D9;
   color: #000000;
-
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
 }
 
-.padding-cajas {
-  padding: 10px;
-}
+
 
 
 .App-header {

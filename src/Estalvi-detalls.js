@@ -12,11 +12,7 @@ function EstalviDetalls() {
                 </div>
             </header>
             <body>
-
-
-
             <div className="container">
-                <div className="cajas">
                     <div className="card-body">
                         <table className="table">
                             <tbody>
@@ -95,9 +91,8 @@ function EstalviDetalls() {
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <div className="row margin-buttons">
-                    <Link to={"/Estalvi"} className={"btn btn-secondary btn-lg"}>Tornar</Link>
+                <div>
+                    <Link to={"/Estalvi"} className={"btn btn-dark"}>Tornar</Link>
                 </div>
             </div>
             </body>
