@@ -7,21 +7,28 @@ const logger = require('morgan');
 //Se carga el modulo de sqlite3
 const sqlite3 = require('sqlite3');
 const e = require("express");
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 //var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 // view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'pug');
 app.set('port', 3000)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const testAPIRouter = require("./routes/testAPI");
+
+app.use('./routes/users', usersRouter);
+app.use("./routes/testAPI", testAPIRouter);
+
+
 app.get('/', (req, res)=>{
     res.send('Bienvenidos')
 })
