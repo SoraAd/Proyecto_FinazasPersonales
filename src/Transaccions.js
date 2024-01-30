@@ -9,7 +9,8 @@ import logo from "./backup/logo.svg";
 
 function Transaccions() {
 
-    const [data, setData] = React.useState({"movimientos":[{"id":1,"cantidad":700,"categoria":"9","fecha":"3/11/2023","descripcion":"November's rent","tipo":"g"}]});
+    const template = {"movimientos":[{"id":null,"cantidad":null,"categoria":null,"fecha":null,"descripcion":null,"tipo":null}]};
+    const [data, setData] = React.useState(template);
 
     React.useEffect(() => {
         fetch("/api/movimientos/")
