@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
 }
 
 .App-logo {
@@ -13,19 +12,110 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.padding1 {
+  padding: 20px;
+}
+
+.margin-buttons {
+  margin: 10px;
+
+}
+
+#sdb{
+  background: #D9D9D9;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.progress-bar-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 7.5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.margin_25px{
+  margin: 25px;
+}
+
+.big-margin{
+  margin-bottom: 230px;
+}
+
+.big-btn {
+  padding: 100px;
+  width: 100%;
+
+}
+
+.myCanvas {
+  width: 25%;
+  height: 25%;
+
+
+}
+
+.bckcolor {
+  background-color: #D9D9D9;
+}
+
+.no-color-link {
+  text-decoration: none;
   color: white;
+  user-select: none;
+}
+
+.no-color-link-black {
+  text-decoration: none;
+  color: black;
+  user-select: none;
+}
+
+.card-container {
+  background-color: #D9D9D9;
+  color: #000000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+
+
+
+
+.App-header {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: calc(10px + 2vmin);
+  color: black;
+
 }
 
 .App-link {
-  color: #61dafb;
+  color: cornflowerblue;
 }
 
 @keyframes App-logo-spin {
