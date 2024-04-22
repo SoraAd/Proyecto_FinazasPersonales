@@ -1,23 +1,23 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import {Link} from "react-router-dom";
-import SideNav1 from "./SideNav1";
+import {Sidebar} from "rsuite";
 
 function EstalviDetalls() {
-    return(
-        <div className="App row">
-            <div className="col-2">
-                <SideNav1/>
-            </div>
+    return (
+        <html className="App" id="page-wrap">
+        <body>
+        <Sidebar pageWrap={'page-wrap'} outerContinerId={'outer-container'}/>
+        <div id="outer-container" >
             <div className="col">
-            <header className="App-header">
+                <header className="App-header">
+                    <div className="container">
+                        <h1>Estalvi</h1>
+                        <a>Verifica les teves transaccions</a>
+                    </div>
+                </header>
+                <body>
                 <div className="container">
-                    <h1>Estalvi</h1>
-                    <a>Verifica les teves transaccions</a>
-                </div>
-            </header>
-            <body>
-            <div className="container">
                     <div className="card-body">
                         <table className="table">
                             <tbody>
@@ -96,13 +96,19 @@ function EstalviDetalls() {
                             </tbody>
                         </table>
                     </div>
-                <div>
-                    <Link to={"/Estalvi"} className={"btn btn-dark"}>Tornar</Link>
+                    <div>
+                        <Link to={"/Estalvi"} className={"btn btn-dark"}>Tornar</Link>
+                    </div>
                 </div>
-            </div>
-            </body>
+                </body>
             </div>
         </div>
+
+        </body>
+
+
+        </html>
+
     );
 }
 

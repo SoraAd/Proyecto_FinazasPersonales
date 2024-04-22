@@ -2,99 +2,96 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Link} from "react-router-dom";
 import ProgressBar from "./ProgressBar";
-import SideNav1 from "./SideNav1";
+import Sidebar from "./Sidebar"
 
 function Estalvi() {
     return (
-        <div className="App row">
-            <div className="col-2">
-                <SideNav1/>
-            </div>
-            <div className="col">
-                <header className="App-header">
-                    <div className="container">
-                        <h1>Hola User</h1>
-                        <p>Avui és un bon dia per estalviar</p>
-                    </div>
-                </header>
-                <body>
+        <html className="App" id="page-wrap">
+        <body>
+        <Sidebar pageWrap={'page-wrap'} outerContinerId={'outer-container'}/>
+        <div id="outer-container">
+            <div className="blue-header">
                 <div className="container">
-                    <div className="text-center">
-                        <div className="row">
-                            <div className="col">
-                                <div className="card-container">
-                                    <div className="card-body">
-                                        <span className="material-symbols-outlined"></span>
-                                        <h5 className="card-title">Estalvi 1</h5>
-                                    </div>
-                                    <div>
-                                        <a className="margin_25px"></a>
-                                        <ProgressBar/>
-                                    </div>
-                                    <div>
-                                        <Link to="/EstalviDetalls" className="btn btn-dark no-color-link">Mostrar més</Link>
-                                    </div>
+                    <h1 className="title">Estalivs</h1>
+                    <p className="text">Avui és un bon dia per estalviar</p>
+                    <hr/>
+                </div>
+            </div>
+            <div className="container">
+                <div className="text-center">
+                    <div className="row py-3">
+                        <div className="col">
+                            <div className="card-container-mes">
+                                <div className="card-body">
+                                    <span className="material-symbols-outlined"></span>
+                                    <h5 className="card-title">Estalvi 1</h5>
                                 </div>
-                            </div>
-                            <div className="col">
-                                <div className="card-container">
-                                    <div className="card-body padding-cajas">
-                                        <span className="material-symbols-outlined"></span>
-                                        <h5 className="card-title">Estalvi 2</h5>
-                                    </div>
-                                    <div>
-                                        <a className="margin_25px"></a>
-                                        <ProgressBar/>
-                                    </div>
-                                    <div >
-                                        <Link to="/EstalviDetalls" className="btn btn-dark no-color-link">Mostrar més</Link>
-                                    </div>
+                                <div>
+                                    <ProgressBar/>
+                                </div>
+                                <div>
+                                    <Link to="/EstalviDetalls" className="btn btn-border btn-light">Mostrar
+                                        més</Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="margin_25px"/>
-                        <div className="row">
-                            <div className="col">
-                                <div className="card-container">
-                                    <div className="card-body">
-                                        <span className="material-symbols-outlined"></span>
-                                        <h5 className="card-title">Estalvi 3</h5>
-                                    </div>
-                                    <div>
-                                        <a className="margin_25px"></a>
-                                        <ProgressBar/>
-                                    </div>
-                                    <div>
-                                        <Link to="/EstalviDetalls" className="btn btn-dark no-color-link">Mostrar més</Link>
-                                    </div>
+                        <div className="col">
+                            <div className="card-container-mes">
+                                <div className="card-body padding-cajas">
+                                    <span className="material-symbols-outlined"></span>
+                                    <h5 className="card-title">Estalvi 2</h5>
                                 </div>
-                            </div>
-                            <div className="col">
-                                <div className="card-container">
-                                    <div className="card-body">
-                                        <span className="material-symbols-outlined"></span>
-                                        <h5 className="card-title">Estalvi 4</h5>
-                                    </div>
-                                    <div>
-                                        <a className="margin_25px"/>
-                                        <ProgressBar/>
-                                    </div>
-                                    <div>
-                                        <Link to="/EstalviDetalls" className="btn btn-dark no-color-link">Mostrar més</Link>
-                                    </div>
+                                <div>
+                                    <ProgressBar/>
+                                </div>
+                                <div>
+                                    <Link to="/EstalviDetalls" className="btn btn-border btn-light">Mostrar
+                                        més</Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="margin_25px"/>
-                        <div className="button-container">
-                            <Link to="/EstalviDetalls" className="custom-button btn btn-dark no-color-link">Mostrar
-                                més</Link>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <div className="card-container-mes">
+                                <div className="card-body">
+                                    <span className="material-symbols-outlined"></span>
+                                    <h5 className="card-title">Estalvi 3</h5>
+                                </div>
+                                <div>
+                                    <ProgressBar/>
+                                </div>
+                                <div>
+                                    <Link to="/EstalviDetalls" className="btn btn-border btn-light">Mostrar
+                                        més</Link>
+                                </div>
+                            </div>
                         </div>
+                        <div className="col">
+                            <div className="card-container-mes">
+                                <div className="card-body">
+                                    <span className="material-symbols-outlined"></span>
+                                    <h5 className="card-title">Estalvi 4</h5>
+                                </div>
+                                <div>
+                                    <ProgressBar/>
+                                </div>
+                                <div>
+                                    <Link to="/EstalviDetalls" className="btn btn-border btn-light no-color-link">Mostrar
+                                        més</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={"py-3"}>
+                        <Link to="/EstalviDetalls" className="btn btn-border btn-light">Mostrar
+                            més</Link>
                     </div>
                 </div>
-                </body>
             </div>
         </div>
+        </body>
+        </html>
 
 
     );

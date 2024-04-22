@@ -1,8 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Sidebar from "./Sidebar";
+import './Sidebar.css'
 
-function TransaccionsAfegir() {
+
+function TransaccionsModificar() {
     return (
         <div className="App row" id="page-wrap">
             <body>
@@ -10,7 +12,7 @@ function TransaccionsAfegir() {
             <div id="outer-container">
                 <div className="blue-header">
                     <div className="container">
-                        <h1 className="title"> Afegir transacció</h1>
+                        <h1 className="title"> Modificar transacció</h1>
                         <a className="text">Selecciona el tipus de finança:</a>
                         <hr/>
                     </div>
@@ -39,4 +41,4 @@ function TransaccionsAfegir() {
     );
 }
 
-export default TransaccionsAfegir;
+export default TransaccionsModificar;
